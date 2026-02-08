@@ -1,0 +1,58 @@
+banner_suffix:
+links:
+  - class_name: 推荐 # 分类名称
+    descr: 参与本站开发、提供设计灵感、解决问题提供帮助，对本站存在直接贡献的博主。 # 分类简介
+    type: card # 显示方式，有两种 card / item
+    suffix:
+    link_list:
+      - name: Efu # 友链名称
+        link: https://www.efu.me # 友链地址
+        descr: An Open Source worker. # 友链简介
+        avatar: https://s3.qjqq.cn/47/660a7ece07609.webp!color # 显示头像
+        topimg: https://s3.qjqq.cn/47/660a7ece07609.webp!color # 如果是card模式下，将显示
+        tag: 博主
+        color: vip
+      - name: 青桔气球 # 友链名称
+        link: https://blog.qjqq.cn/ # 友链地址
+        descr: 分享网络安全与科技生活 # 友链简介
+        avatar: https://q2.qlogo.cn/headimg_dl?dst_uin=1645253&spec=640# 显示头像
+        topimg: https://q2.qlogo.cn/headimg_dl?dst_uin=1645253&spec=640 # 如果是card模式下，将显示
+        tag: 博主
+        color: vip
+        
+      - name: 张洪heo # 友链名称
+        link: https://blog.zhheo.com/ # 友链地址
+        descr: 分享设计与科技生活 # 友链简介
+        avatar: https://img.zhheo.com/i/67d8fa75943e4.webp# 显示头像
+        topimg: https://img.zhheo.com/i/67d8fb3c51399.webp
+        tag: 博主
+        color: vip
+        
+      - name: ❖星港◎Star☆
+        link: https://blog.starsharbor.com
+        avatar: https://bu.dusays.com/2025/04/11/67f92f6fcfb26.webp
+        topimg: https://bu.dusays.com/2025/04/11/67f92f6fcfb26.webp
+        descr: 以博客记录生活与热爱！
+        tag: 博主
+        color: vip
+  - class_name: 技术
+    descr: 技术知识为主的博客
+    type: item
+    suffix:
+    link_list:
+      - name: isYangs # 友链名称
+        link: https://isyangs.cn # 友链地址
+        avatar: https://7.isyangs.cn/8/655c9835780a0-8.jpg # 显示头像
+        descr: 一个前端Bug构造师的博客 # 友链简介
+      - name: quicer
+        link: https://quicer.js.cool
+        descr: 没有黑暗 星星也无法闪烁
+        avatar: https://bmgucnlcvqpnyjdy.public.blob.vercel-storage.com/quicer-ES8JhKFugh1xxUHFd1dEV4E1Rfv0n4.webp
+        topimg: https://bmgucnlcvqpnyjdy.public.blob.vercel-storage.com/quicer-ES8JhKFugh1xxUHFd1dEV4E1Rfv0n4.webp
+        class: 技术
+      - name: SamHou's Blog
+        link: https://blog.samhou.top/
+        avatar: https://blog.samhou.top/img/SamHou.png
+        topimg: https://blog.samhou.top/img/SamHou.png
+        descr: Sleep for a better life.
+        class: 技术

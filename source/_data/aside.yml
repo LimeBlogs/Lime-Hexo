@@ -1,0 +1,101 @@
+- name: digit-clock
+  title:
+  class: card-digit-clock
+  id: card-digit-clock
+  icon:
+  content_class:
+  content_id: 
+  content_html: "<script defer async pjax src='/js/custom/digit-clock.js'></script>"
+  
+- name: schedule
+  id: card-widget-schedule
+  content_html: |
+    <div id="schedule-area-left">
+      <div id="schedule-title">距离除夕</div>
+      <div id="schedule-days"></div>
+      <div id="schedule-date">2026-02-16</div>
+    </div>
+    <div id="schedule-area-right">
+      <div class="schedule-r0">
+        <div class="schedule-d0">本年</div>
+        <div class="schedule-d1">
+          <span id="p_span_year" class="aside-span1"></span>
+          <span class="aside-span2">还剩<a></a>天</span>
+          <progress max="365" id="pBar_year"></progress>
+        </div>
+      </div>
+      <div class="schedule-r1">
+        <div class="schedule-d0">本月</div>
+        <div class="schedule-d1">
+          <span id="p_span_month" class="aside-span1"></span>
+          <span class="aside-span2">还剩<a></a>天</span>
+          <progress max="30" id="pBar_month"></progress>
+        </div>
+      </div>
+      <div class="schedule-r2">
+        <div class="schedule-d0">本周</div>
+        <div class="schedule-d1">
+          <span id="p_span_week" class="aside-span1"></span>
+          <span class="aside-span2">还剩<a></a>天</span>
+          <progress max="7" id="pBar_week"></progress>
+        </div>
+      </div>
+    </div>
+
+- name: schedule
+  id: card-widget-schedule
+  content_html: |
+    <div id="schedule-area-left">
+    <div id="schedule-title">距离除夕</div>
+    <div id="schedule-days"></div>
+    <div id="schedule-date">2026-02-16</div>
+    </div>
+    <div id="schedule-area-right">
+    <div class="schedule-r0">
+        <div class="schedule-d0">本年</div>
+        <div class="schedule-d1">
+        <span id="p_span_year" class="aside-span1"></span>
+        <span class="aside-span2">还剩<a></a>天</span>
+        <progress max="365" id="pBar_year"></progress>
+        </div>
+    </div>
+    <div class="schedule-r1">
+        <div class="schedule-d0">本月</div>
+        <div class="schedule-d1">
+        <span id="p_span_month" class="aside-span1"></span>
+        <span class="aside-span2">还剩<a></a>天</span>
+        <progress max="30" id="pBar_month"></progress>
+        </div>
+    </div>
+    <div class="schedule-r2">
+        <div class="schedule-d0">本周</div>
+        <div class="schedule-d1">
+        <span id="p_span_week" class="aside-span1"></span>
+        <span class="aside-span2">还剩<a></a>天</span>
+        <progress max="7" id="pBar_week"></progress>
+        </div>
+    </div>
+    </div>
+
+- name: calendar
+  id: card-widget-calendar
+  content_html: |
+    <div id="calendar-area-left">
+    <div id="calendar-week"></div>
+    <div id="calendar-date" style="font-size: 48px;"></div>
+    <div id="calendar-solar"></div>
+    <div id="calendar-lunar"></div>
+    </div>
+    <div id="calendar-area-right">
+    <div id="calendar-main">
+    </div>
+    </div>
+
+- name: newYear
+  id: newYear
+  content_html: |
+    <div id="newYear-main"><div class="mask"></div>
+    <p class="title"></p>
+    <div class="newYear-time"></div>
+    <p class="today" style="text-align: right;"></p>
+    </div>

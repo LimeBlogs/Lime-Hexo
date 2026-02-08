@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+source/_posts_bak
+.deploy_git/
+google_key.json
+_config.yml
+BingSiteAuth.xml
+googlef594c815e2fe706e.html
+source/LimePan-O

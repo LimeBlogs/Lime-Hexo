@@ -1,0 +1,47 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server"
+  },
+  "hexo": {
+    "version": "7.3.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "hexo": "^7.3.0",
+    "hexo-admonition": "^1.1.2",
+    "hexo-deployer-git": "github:hexojs/hexo-deployer-git",
+    "hexo-filter-mathjax": "^0.9.0",
+    "hexo-filter-tikzjax": "^1.0.2",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-searchdb": "^1.4.1",
+    "hexo-generator-sitemap": "^3.0.1",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-hide-posts": "^0.4.3",
+    "hexo-indexnow": "^1.2.0",
+    "hexo-link-card": "^1.0.1",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-markdown-it": "^7.1.1",
+    "hexo-renderer-pandoc": "^0.4.0",
+    "hexo-renderer-pug": "^3.0.0",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-safego": "^2.1.0",
+    "hexo-seo-autopush": "^2.1.5",
+    "hexo-server": "^3.0.0",
+    "hexo-simple-mindmap": "^0.8.0",
+    "hexo-spoiler": "^1.7.4",
+    "hexo-submit-urls-to-search-engine": "^2.1.0",
+    "hexo-tag-echarts": "^1.0.0",
+    "hexo-theme-landscape": "^1.0.0",
+    "hexo-wordcount": "^6.0.1",
+    "ncp": "^2.0.0",
+    "valine": "^1.5.3"
+  }
+}
