@@ -47,13 +47,15 @@ nav:
     #  福利: https://LimeLinks.github.io/
     #  友链:
     #  朋友圈: /moments/ || fas fa-wifi
-      友情链接: /links/ || fas fa-user-group
     其他: 
       捐赠: /about/ || far fa-dollar-sign
       空间: /moment/ || fas fa-heart
       友情链接: /links/ || fas fa-user-group
       网易云歌单: https://music.163.com/#/playlist?id=13654548018 || far fa-list-alt
-    节气solarterms: https://baike.baidu.com/item/%E4%BA%8C%E5%8D%81%E5%9B%9B%E8%8A%82%E6%B0%94/191597
+    订阅:
+      Rss: /rss2.xml || fas fa-rss-square
+      Atom: /atom.xml || fas fa-pencil
+    节气solarterms: /Solar-Terms.html
     #  宝藏博主: javascript:travelling() || fas fa-gift
     # 关于:
     #   我的装备: /equipment/ || fas fa-laptop
@@ -137,7 +139,7 @@ hometop:
   group:
     分类: /categories || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
     标签: /tags || fas fa-tags || linear-gradient(to right,#f6736b,#934f91)
-    实验室: /2025/01/15/LAB/ || fas fa-book || linear-gradient(to right,#ff8570,#418cb7)
+    实验室: /2025/01/15/lab/ || fas fa-book || linear-gradient(to right,#ff8570,#418cb7)
     Github: https://github.com/l1me0n7op || fab fa-github ||
       linear-gradient(to right,#b2b9be,#2f4052)
     # 热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
@@ -460,11 +462,11 @@ lure:
 # Article expiration
 # 文章过期
 expire:
-  enable: true
-  time: 45 # days
+  enable: false
+  time: 30 # days
   position: top # top / bottom
   text_prev: "本文章在 "
-  text_next: " 天前更新，请注意文章内容的时效性！"
+  text_next: "+30天前更新，请注意文章内容的时效性！"
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -671,7 +673,7 @@ footer:
   # 页脚信息文字
   links:
   - name: ver.beta2
-    url: 2025/01/15/莱姆の更新日志/
+    url: 2025/01/15/updatelog/
     # - name: RSS
     #   url: /atom.xml
     # - name: License

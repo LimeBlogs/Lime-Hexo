@@ -16,11 +16,11 @@ mathjax:
 tikzjax:
 ---
 
-# 准备工作
+## 准备工作
 
 一个可以使用QQ邮箱的QQ或者任意其它邮箱，用于注册和登陆Phira。
 
-## Phira-介绍
+### Phira-介绍
 
 >Phira是在Phigros源码的基础上开发的一款非商业社区性音游，是Phigros最大的第三方社区<br>你可以[点我](https://github.com/TeamFlos/phira)跳转到它的官方Github.
 
@@ -28,11 +28,11 @@ tikzjax:
 
 >iOS最简单的下载方法就是使用外区AppleID登陆Appstore后下载，没有可以考虑自行下载ipa包签名安装。
 
-# 下载Phira
+## 下载Phira
 
 每个平台都可以下载并游玩Phira，最简单的方法的通过Github Releases下载，本站也提供镜像的下载页面。
 
-## 通过Github
+### 通过Github
 
 !!! fail 提示
     使用Github下载需要您拥有一个良好的网络环境，说人话，就是大陆用户不方便下载（大多数）
@@ -41,17 +41,17 @@ tikzjax:
 
 ![Github发行版界面预览](/LimePan/Phira/phira_download.webp)<br>
 
-## 通过第三方镜像下载
+### 通过第三方镜像下载
 
 >Github在中国的速度实在是一坨，谢天谢地，总有救世主愿意无私为大家搭建镜像，这可以很快提升下载速度。
 
-### Dmocken的Phira下载站
+#### Dmocken的Phira下载站
 
 [点我](http://60.205.141.124:5244/Phira游戏本体/)跳转至镜像下载页面，跳转后选择与自己设备相符的版本下载即可（iOS需要签名后安装）
 
 ![Dmocken镜像页预览](/LimePan/Phira/phira_download_mirror.webp)<br>
 
-# 注册并登陆Phira
+## 注册并登陆Phira
 
 Phira在不登陆的情况下无法使用谱面社区（无法在线下载谱面）和上传成绩，因此，你需要注册一个Phira账号以正常使用Phira。
 
@@ -67,15 +67,15 @@ Phira在不登陆的情况下无法使用谱面社区（无法在线下载谱面
 
 如果一切顺利，那么你应该就可以使用你所填写的密码和账号登陆了。
 
-# Phira的使用
+## Phira的使用
 
-## 调整延迟
+### 调整延迟
 
 >你可以点击主界面右下角的“设置”，然后切换至音频选项卡以调整延迟。
 
 ![调整延迟](/LimePan/Phira/change_delay.webp)<br>
 
-## 下载谱面
+### 下载谱面
 
 >你需要知道的是“未上架”的谱面数量远高于“上架”的谱面数量，且“未上架”的谱面无法增长rks
 
@@ -85,7 +85,7 @@ Phira在不登陆的情况下无法使用谱面社区（无法在线下载谱面
 
 挑一首你喜欢的铺子，进入后下载直接开打即可
 
-## 导入
+### 导入
 
 Phira支持导入自定义谱面和自定义音符资源包，向下查看具体操作。
 
@@ -93,7 +93,7 @@ Phira支持导入自定义谱面和自定义音符资源包，向下查看具体
     你需要自己提前下载好谱面/资源包文件！
 
 
-### 导入资源包
+#### 导入资源包
 
 >在主界面点击“资源包”选项卡，然后点击“＋”号，选择资源包文件即可
 
@@ -101,7 +101,7 @@ Phira支持导入自定义谱面和自定义音符资源包，向下查看具体
 
 ![导入资源包](/LimePan/Phira/pack_file_import.webp)<br>
 
-### 导入谱面
+#### 导入谱面
 
 >在“谱面库”选项卡，单击右上角的“导入”按钮，后选择你的zip谱面文件即可，与资源包导入同理。
 
@@ -109,7 +109,7 @@ Phira支持导入自定义谱面和自定义音符资源包，向下查看具体
 
 ![导入本地谱面](/LimePan/Phira/puzi_file_import.webp)<br>
 
-## Phira“练习”功能
+### Phira“练习”功能
 
 >Phira具有非常强大的练习功能，支持对铺子变速和自定义开头与结尾。
 
@@ -123,12 +123,12 @@ Phira支持导入自定义谱面和自定义音符资源包，向下查看具体
 
 ![练习页面](/LimePan/Phira/practice.webp)<br>
 
-# 寻找第三方资源
+## 寻找第三方资源
 
 !!! note 提示
     该页面还在建设中，期待后续更新。
 
-## Phizone
+### Phizone
 
 >PhiZone是一个提供Phigros谱面二创资源的平台，需要注册并同意服务条款才能使用。<br>来自-[吾萌百科](https://wiki.xhsr.org.cn/PhiZone)
 
@@ -138,25 +138,25 @@ Phira支持导入自定义谱面和自定义音符资源包，向下查看具体
 <br>
 [点我出发](https://www.phi.zone/)
 
-## prprBlog
+### prprBlog
 
 >该网站收录了许多的免费音符资源包，无需登陆即可免费下载
 
 [点我出发](https://prprblog.kevin2106.top/)
 
-## Phira官方文档
+### Phira官方文档
 
 >此站点为Phira的官方文档，包含许多小白开发者可能会遇到的问题
 
 [点我出发](https://teamflos.github.io/phira-docs/index.html)
 
-## Phitogether
+### Phitogether
 
 >该站点为Phigros的在线版网页社区，可以在线游玩自制谱，甚至可以自己导入本地谱面进行游玩。
 
 [点我出发](https://phitogether.fun/)
 
-## Re:PhiEdit
+### Re:PhiEdit
 
 !!! fail 提示
     该工具只存在Windows版本！
@@ -167,7 +167,7 @@ Phira支持导入自定义谱面和自定义音符资源包，向下查看具体
 <br>
 [点我出发](https://pgrfm.miraheze.org/wiki/Re:PhiEdit)
 
-## Open-PhiEdit
+### Open-PhiEdit
 
 !!! fail 提示
     该工具只存在Windows版本！该软件使用Electron框架编写，也许你可以自己考虑编译构建其它平台的版本？

@@ -16,7 +16,7 @@ mathjax:
 tikzjax:
 ---
 
-# 前言
+## 前言
 之前通过某些渠道了解到MOOC.fi这个网站，我发现里面有java教程，在我学习近两周后发现效果很好。<br>
 我因此在我博客上开了一篇新文章，来记录在MOOC中学习TMC的java课程中的心得以及一些笔记。<br>
 我将官网的链接放在底下，有兴趣可以去看看。
@@ -30,10 +30,10 @@ https://java-programming.mooc.fi/
 
 >如果看不懂英文可以搭配沉浸式翻译之类的插件来看。
 
-# Part2-Theme4
+## Part2-Theme4
 第二部分主要是For循环与方法的学习，自己花点时间For循环其实就能掌握的差不多了。
 
-## Advanced astrology
+### Advanced astrology
 这里我简单说一下最后一个练习。`Advanced astrology (高级占星术)
 `
 <br>

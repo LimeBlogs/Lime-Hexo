@@ -10,6 +10,7 @@ categories:
 - 教程
 ---
 
+## 方法
 !!! warning 警告
     该教程仅适用于Solitude主题！
     <br>不过大概思路以及方法都是类似的

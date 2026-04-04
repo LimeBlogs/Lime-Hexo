@@ -4,7 +4,7 @@ date: 2026-02-06 19:19:42
 top:
 cover: /LimePan/androidGalgame/cover.webp
 categories: 教程
-description: 本片介绍了如何在安卓上快速游玩Galgame以及常用资源的分享，同时还说明了什么是Krkr2与Ons。
+description: 本文介绍了如何在安卓上快速游玩Galgame以及常用资源的分享，同时还说明了什么是Krkr2与Ons，这是适用于萌新的基础教程项文章
 hidden:
 tags:
 - 教程
@@ -16,7 +16,7 @@ mathjax:
 tikzjax:
 ---
 
-# 配套视频教程
+## 配套视频教程
 
 我在[Bilibili](https://www.bilibili.com/video/BV1xQFkzmEGE/)发布了视频教程，欢迎支持我
 
@@ -24,7 +24,7 @@ tikzjax:
 
 
 
-# 安装Tyranor
+## 安装Tyranor
 
 >Tyranor是安卓上的Galgame模拟器，现已支持基于Ons/Krkr2引擎的游戏。基本大众些的Galgame基本都可以运行。
 
@@ -54,13 +54,13 @@ https://lime.lanzout.com/ieuyZ3hysbgf
 
 ![h2 install](/LimePan/androidGalgame/install_ty.webp)<br>
 
-# 获取更多资源
+## 获取更多资源
 Galgame资源你可以从很多地方获取，接下来我会提供些你可能用的到的网站去获取`Krkr2/Ons`移植过的Galgame资源。<br>
 
 !!! todo 提示
     视频中有许多内容我没有提到，一个是因为平台敏感缘故，还有原因是Galgame无需太过出圈，只留给真正感兴趣的同学。
 
-## GalSites
+### GalSites
 
 >免费GalGame资源站目录，收录了诸多免费的gal资源站，是一个收藏夹类的项目。
 
@@ -77,7 +77,7 @@ https://github.com/Shrans/GalSites
 
 ---
 
-## 真红小站(失落小站)
+### 真红小站(失落小站)
 
 >真红小站（原 失落小站）一个galgame资源站, 收录了大部分的汉化galgame, 大部分的生肉galgame资源，krkr资源，visual novel，等等。
 
@@ -95,7 +95,7 @@ https://shinnku.com/
 
 ---
 
-## 梓澪の妙妙屋
+### 梓澪の妙妙屋
 
 !!! fail 提示
     由于奇怪的原因，你可能无法正常访问它，开始前请先准备好合适的网络环境。
@@ -119,14 +119,14 @@ https://zi0.cc/
 
 ---
 
-# 什么是Krkr2与Ons？
+## 什么是Krkr2与Ons？
 
 >在视频中由于篇幅限制我无法展开来说明，在这里详细说说。
 
 !!! fail 提示
     内容由Gemini-3.0-Pro生成。
 
-## 引言：手机玩 Galgame 的两把“万能钥匙”
+### 引言：手机玩 Galgame 的两把“万能钥匙”
 
 如果你是一个刚接触 Galgame（美少女游戏/视觉小说）的玩家，或者想在被窝里用手机推几部 PC 上的经典大作，你绝对绕不开两个词：**Krkr** 和 **Ons**。<br>
 
@@ -138,9 +138,9 @@ https://zi0.cc/
 
 ---
 
-## 第一部分：Krkr2 (吉里吉里2)
+### 第一部分：Krkr2 (吉里吉里2)
 
-### 1. 它的本质是什么？
+#### 1. 它的本质是什么？
 在 Galgame 开发圈，有一款非常著名的**游戏引擎**叫 **Kirikiri (吉里吉里)**。<br>
  **PC 端：** 它是开发工具。像《Fate/stay night》、《由于世界在之后终结》、《死馆》等无数著名大作，都是用这个引擎写出来的。<br>
  **手机端 (你所理解的 Krkr)：** 指的是一个名为 **Kirikiroid2 (吉里吉里2模拟器)** 的 APP。<br>
@@ -148,13 +148,13 @@ https://zi0.cc/
 **核心逻辑：**<br>
 Kirikiroid2 这个 APP 做到了在安卓上直接“原生”运行 PC 版 Kirikiri 引擎的代码。它不是简单的投屏，而是实打实地调用手机 CPU 去渲染游戏画面和脚本。<br>
 
-### 2. 如何识别 Krkr 游戏？
+#### 2. 如何识别 Krkr 游戏？
 当你下载到一个压缩包，解压后看到以下文件特征，它就是 Krkr 游戏：<br>
  核心数据文件后缀为 **`.xp3`** (如 `data.xp3`, `patch.xp3`)。<br>
  启动文件通常是 `startup.tjs` 或 `data.xp3`。<br>
  通常包含 `plugin` 文件夹（存放插件）。<br>
 
-### 3. Krkr 的优缺点
+#### 3. Krkr 的优缺点
  **优点（画质与性能）：**<br>
      **还原度极高：** 因为它是直接运行原版脚本，所以原本 PC 上的动态立绘（E-mote）、复杂的粒子特效、菜单交互，在手机上都能完美呈现。<br>
      **资源通用：** 很多时候，你把电脑上安装好的游戏文件夹直接复制到手机里，就能直接用模拟器打开玩（只要没有加密限制）。<br>
@@ -164,9 +164,9 @@ Kirikiroid2 这个 APP 做到了在安卓上直接“原生”运行 PC 版 Kiri
 
 ---
 
-## 第二部分：Ons (ONScripter)
+### 第二部分：Ons (ONScripter)
 
-### 1. 它的本质是什么？
+#### 1. 它的本质是什么？
 ONS 的全称是 **ONScripter**。它的历史比 Krkr 更有“极客”味。<br>
  **起源：** 日本有一个叫 NScripter 的闭源引擎（曾制作过《月姬》、《寒蝉鸣泣之时》）。<br>
  **开源复刻：** 一位叫 Ogapee 的大神为了让非 Windows 系统（如 Linux）也能玩这些游戏，写了一个开源的解释器，叫 **ONScripter**。<br>
@@ -175,13 +175,13 @@ ONS 的全称是 **ONScripter**。它的历史比 Krkr 更有“极客”味。<
 **核心逻辑：**<br>
 手机上的 Ons 模拟器（如 ONScripter-JH, ONScripter-Plus），读取的是**经过移植处理**的脚本。这意味着，大部分 Ons 游戏并非直接拿 PC 版就能跑，而是经过了“移植组”的修改，把图片压缩、脚本重写，变成了手机能读懂的格式。
 
-### 2. 如何识别 Ons 游戏？
+#### 2. 如何识别 Ons 游戏？
 解压游戏包后，看到以下“三件套”特征，它就是 Ons 游戏：<br>
  **`0.txt`** 或 **`nscript.dat`**：这是剧本文件（核心代码）。<br>
  **`arc.nsa`**：这是资源包（图片、音乐的压缩包）。<br>
  **`default.ttf`**：字体文件（虽然现在模拟器通常自带字体，但游戏包里常有）。<br>
 
-### 3. Ons 的优缺点
+#### 3. Ons 的优缺点
  **优点（稳定与便携）：**<br>
      **傻瓜式运行：** 只要文件完整，极少报错。它不需要像 Krkr 那样折腾各种补丁。<br>
      **配置要求低：** 十年前的手机都能流畅运行，因为它显示的通常是静态图片配合文字，极少有复杂的实时渲染。<br>
@@ -192,7 +192,7 @@ ONS 的全称是 **ONScripter**。它的历史比 Krkr 更有“极客”味。<
 
 ---
 
-## 第三部分：核心区别总结 (省流版)
+### 第三部分：核心区别总结 (省流版)
 
 | 特性 | Krkr2 (吉里吉里) | Ons (ONScripter) |
 | :--- | :--- | :--- |
@@ -204,7 +204,7 @@ ONS 的全称是 **ONScripter**。它的历史比 Krkr 更有“极客”味。<
 
 ---
 
-## 结语：时代的眼泪与传承
+### 结语：时代的眼泪与传承
 
 讲透了这两个概念，你实际上看到的是 Galgame 在移动端的**进化史**。<br>
 

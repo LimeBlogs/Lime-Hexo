@@ -8,20 +8,19 @@ tags:
 - Hexo
 - 博客
 categories: 主站建设
+description: Hexo魔改折腾记录，内含LimeBlogs的许多插件的使用方法
 top: 499
 mathjax: true
 tikzjax: true
 ---
-# 起因
-
-
+## 起因
 
 在更新日志撰写完毕后，我觉得开设一个帖子，专门存放一些Hexo与Markdown之类的代码与功能，这就是LimeLAB的由来。<br>主要还是没东西写罢了，只不过是为赋新词强说愁
 
-# 实验性功能[测试]
+## 实验性功能[测试]
 以下存放代码以及功能实现，一方面是便于我调用，另一方面是为了水一篇帖子
 
-## Solitude部分功能测试
+### Solitude部分功能测试
 
 {% subtabs 演示1 %}
 <!-- tab test1 -->
@@ -35,7 +34,7 @@ tikzjax: true
 <!-- endtab-->
 {% endsubtabs %}
 
-## Ruby与Spoiler
+### Ruby与Spoiler
 
 😋请先确保安装hexo-renderer-markdown-it
 
@@ -109,7 +108,7 @@ spoiler:
 
 {% spoiler Lime世界第一帅 %}与{% spoiler style:box Lime世界第一帅 %}
 
-## Tikz几何支持
+### Tikz几何支持
 如图所示，
 ```tikz
 \begin{document}
@@ -128,7 +127,7 @@ spoiler:
 
 
 
-## 数学公式支持
+### 数学公式支持
 
 !!! fail 警告
     在安装本文的两个插件前，请先卸载其它的hexo数学公式类插件（渲染）
@@ -204,7 +203,7 @@ f(x)=f(x+T)，T\in N^{*} 什么周期
 $$
 
 
-## Hexo-Admonition
+### Hexo-Admonition
 
 > Hexo 内容辅助插件，支持将类似 reStructuredText 的警告提示块添加到 Markdown 文档中。<br>
 
@@ -362,7 +361,7 @@ p.admonition-title {
 ```
 
 
-## 在md中引入Geogebra
+### 在md中引入Geogebra
 这个功能就是使用``</iframe>``来引入网页<br>功能如下
 <iframe src="https://www.geogebra.org/material/iframe/id/aybe2kg6/width/400/height/400/" width="400px" height="400px" style="border:0px;"> </iframe>
 如果是几何的话甚至可以拖动！这样就可以很方便的在Hexo引入数学函数图像，方便易用。
@@ -374,7 +373,7 @@ height="400px">
 </iframe>
 ```
 
-### 如何创建分享链接？
+#### 如何创建分享链接？
 `首先，你需要一个账户，这太简单了，使用邮箱即可注册，这里跳过不讲`<br>
 打开[Geogebra Classic](https://www.geogebra.org/classic)输入你要的函数之后点击“分享”
 

@@ -358,7 +358,22 @@ hide_posts:
   # 如果同时设置了黑名单和白名单，白名单的优先级更高
   # blocklist_generators: ['*']
 
-# 注意在此处配置
+feed:
+  enable: true
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml  
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
 ```
 
 

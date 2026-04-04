@@ -40,10 +40,10 @@ links:
     type: item
     suffix:
     link_list:
-      - name: isYangs # 友链名称
-        link: https://isyangs.cn # 友链地址
-        avatar: https://7.isyangs.cn/8/655c9835780a0-8.jpg # 显示头像
-        descr: 一个前端Bug构造师的博客 # 友链简介
+    #  - name: isYangs # 友链名称
+    #    link: https://isyangs.cn # 友链地址
+    #    avatar: https://7.isyangs.cn/8/655c9835780a0-8.jpg # 显示头像
+    #    descr: 一个前端Bug构造师的博客 # 友链简介
       - name: quicer
         link: https://quicer.js.cool
         descr: 没有黑暗 星星也无法闪烁
@@ -51,8 +51,14 @@ links:
         topimg: https://bmgucnlcvqpnyjdy.public.blob.vercel-storage.com/quicer-ES8JhKFugh1xxUHFd1dEV4E1Rfv0n4.webp
         class: 技术
       - name: SamHou's Blog
-        link: https://blog.samhou.top/
-        avatar: https://blog.samhou.top/img/SamHou.png
-        topimg: https://blog.samhou.top/img/SamHou.png
+        link: https://blog.samhou.moe/
+        avatar: https://img.samhou.top/SamHou.png
+        topimg: https://img.samhou.top/SamHou.png
         descr: Sleep for a better life.
+        class: 技术
+      - name:  Firgt's Blog
+        link: https://blog.firgt.cn
+        descr: 其实是一个很懒的初中生的博客啦
+        avatar: https://firgt.eu.org/images/Enderman.jpg
+        topimg: https://firgt.eu.org/images/Enderman.jpg
         class: 技术

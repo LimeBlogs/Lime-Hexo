@@ -1,0 +1,420 @@
+---
+layout: false
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节气 | 莱姆Lime</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        :root {
+            --md-sys-color-primary: #386a20;
+            --md-sys-color-on-primary: #ffffff;
+            --md-sys-color-primary-container: #e6f9d7; 
+            --md-sys-color-on-primary-container: #042100;
+            --md-sys-color-surface: #fdfdf5;
+            --md-sys-color-on-surface: #1a1c18;
+            --md-sys-color-surface-variant: #dfe4d7;
+            --md-sys-color-on-surface-variant: #43483e;
+            --md-sys-color-outline: #74796d;
+            --md-sys-color-background: #edf2ea;
+            --md-elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* 修复点：全浏览器兼容的禁止文本选中 */
+            -webkit-user-select: none; /* Chrome, Safari, 新版 Edge */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* IE 10+, 老版 Edge */
+            user-select: none;         /* 标准语法 */
+        }
+
+        /* 确保输入框等元素正常（虽然当前应用没有输入框，但这是好习惯） */
+        input, textarea {
+            -webkit-user-select: auto;
+            -moz-user-select: auto;
+            -ms-user-select: auto;
+            user-select: auto;
+        }
+
+        body {
+            background-color: var(--md-sys-color-background);
+            color: var(--md-sys-color-on-surface);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            perspective: 1500px;
+        }
+
+        .app-container {
+            display: flex;
+            background-color: var(--md-sys-color-surface);
+            width: 850px;
+            height: 500px;
+            border-radius: 28px;
+            box-shadow: var(--md-elevation-3);
+            transition: transform 0.1s ease-out;
+            transform-style: preserve-3d;
+        }
+
+        .calendar-section {
+            flex: 1;
+            padding: 32px;
+            border-right: 1px solid var(--md-sys-color-surface-variant);
+            display: flex;
+            flex-direction: column;
+            transform: translateZ(20px);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .calendar-header h2 {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--md-sys-color-primary);
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--md-sys-color-on-surface-variant);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .icon-btn:hover {
+            background-color: var(--md-sys-color-surface-variant);
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--md-sys-color-outline);
+            margin-bottom: 12px;
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            flex: 1;
+        }
+
+        .day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.25s cubic-bezier(0.2, 0, 0, 1); 
+        }
+
+        .day:hover:not(.empty) {
+            background-color: var(--md-sys-color-surface-variant);
+            transform: scale(1.08);
+        }
+        
+        .day:active:not(.empty) {
+            transform: scale(0.95);
+        }
+
+        .day.empty {
+            cursor: default;
+        }
+
+        .day.solar-term {
+            background-color: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+            font-weight: 700;
+        }
+
+        .day.solar-term::after {
+            content: attr(data-term);
+            font-size: 10px;
+            position: absolute;
+            bottom: 4px;
+            color: var(--md-sys-color-primary);
+            opacity: 0.8;
+        }
+
+        .day.solar-term:hover {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+        }
+        
+        .day.solar-term:hover::after {
+            color: var(--md-sys-color-primary-container);
+        }
+
+        .day.selected {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            transform: scale(1.08);
+        }
+        .day.selected::after {
+            color: var(--md-sys-color-primary-container);
+        }
+
+        .details-section {
+            width: 350px;
+            padding: 48px 32px;
+            background-color: var(--md-sys-color-surface-variant);
+            border-radius: 0 28px 28px 0;
+            display: flex;
+            flex-direction: column;
+            transform: translateZ(40px);
+            box-shadow: -4px 0 16px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .term-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--md-sys-color-primary);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .term-date {
+            font-size: 16px;
+            color: var(--md-sys-color-on-surface-variant);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .term-desc {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        .animate-details > * {
+            animation: fadeInUp 0.5s cubic-bezier(0.2, 0, 0, 1) both;
+        }
+        .animate-details .term-title { animation-delay: 0s; }
+        .animate-details .term-date { animation-delay: 0.05s; }
+        .animate-details .term-desc { animation-delay: 0.1s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container" id="app">
+        <div class="calendar-section">
+            <div class="calendar-header">
+                <button class="icon-btn" onclick="changeMonth(-1)"><span class="material-symbols-outlined">chevron_left</span></button>
+                <h2 id="month-year"></h2>
+                <button class="icon-btn" onclick="changeMonth(1)"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+            <div class="weekdays">
+                <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+            </div>
+            <div class="days-grid" id="days-grid"></div>
+        </div>
+
+        <div class="details-section" id="details-section">
+            </div>
+    </div>
+
+    <script>
+        // 修复点：通过 JS 拦截鼠标选择事件，双重保险
+        document.addEventListener('selectstart', e => e.preventDefault());
+        
+        // 禁用右键菜单
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        const termsData = {
+            "02-04": { name: "立春", desc: "春季的开始，冰雪渐渐消融，万物复苏。民间有“咬春”的习俗。" },
+            "02-18": { name: "雨水", desc: "降雨开始，雨量逐步增多，气温回升，冰雪融化。" },
+            "03-05": { name: "惊蛰", desc: "春雷乍动，惊醒了蛰伏在土壤中冬眠的动物。进入春耕大忙季节。" },
+            "03-20": { name: "春分", desc: "昼夜平分，春意融融。此后北半球昼渐长，夜渐短。" },
+            "04-04": { name: "清明", desc: "天气晴朗，草木繁茂。是节气也是传统节日，人们常在此时扫墓祭祖、踏青。" },
+            "04-20": { name: "谷雨", desc: "春季的最后一个节气。雨水增多，大大有利于谷类农作物的生长。" },
+            "05-05": { name: "立夏", desc: "夏季的开始，万物繁茂，农作物进入旺盛生长阶段。" },
+            "05-21": { name: "小满", desc: "夏熟作物的籽粒开始灌浆饱满，但还未成熟，只是小满，还未大满。" },
+            "06-05": { name: "芒种", desc: "有芒的麦子快收，有芒的稻子可种。农事非常忙碌。" },
+            "06-21": { name: "夏至", desc: "炎热的夏天真正到来，北半球白昼最长，夜晚最短。" },
+            "07-07": { name: "小暑", desc: "天气开始炎热，但还没到最热的时候。" },
+            "07-23": { name: "大暑", desc: "一年中最热的时期，气温最高，农作物生长最快。" },
+            "08-07": { name: "立秋", desc: "秋季的开始，气温逐渐下降，开始感受秋意。" },
+            "08-23": { name: "处暑", desc: "炎热的夏天即将过去，暑气至此而止。" },
+            "09-07": { name: "白露", desc: "天气渐凉，夜间水汽凝结在树叶上形成露水。" },
+            "09-23": { name: "秋分", desc: "昼夜再次平分，秋高气爽。此后北半球夜渐长，昼渐短。" },
+            "10-08": { name: "寒露", desc: "气温更低，露水更多，且带寒意。" },
+            "10-23": { name: "霜降", desc: "秋季的最后一个节气。天气渐冷，开始有霜。" },
+            "11-07": { name: "立冬", desc: "冬季的开始，万物收藏，规避寒冷。" },
+            "11-22": { name: "小雪", desc: "开始降雪，但雪量不大。" },
+            "12-07": { name: "大雪", desc: "降雪量增多，地面可能积雪。" },
+            "12-22": { name: "冬至", desc: "寒冷的冬天真正到来，北半球白昼最短，夜晚最长。" },
+            "01-05": { name: "小寒", desc: "进入严寒时期，但还没到最冷的极点。" },
+            "01-20": { name: "大寒", desc: "一年中最冷的时期，冰天雪地。" }
+        };
+
+        const realToday = new Date(); 
+        let currentDisplayDate = new Date(realToday.getFullYear(), realToday.getMonth(), 1); 
+        let selectedDayElement = null;
+
+        function getCurrentActiveTerm() {
+            const todayStr = String(realToday.getMonth() + 1).padStart(2, '0') + '-' + String(realToday.getDate()).padStart(2, '0');
+            const termKeys = Object.keys(termsData).sort();
+            
+            let activeKey = termKeys[termKeys.length - 1]; 
+            for (let i = 0; i < termKeys.length; i++) {
+                if (todayStr >= termKeys[i]) {
+                    activeKey = termKeys[i];
+                } else {
+                    break;
+                }
+            }
+            return {
+                key: activeKey,
+                year: realToday.getFullYear()
+            };
+        }
+
+        function updateDetails(dateKey, year, dayElement) {
+            const details = document.getElementById('details-section');
+            
+            details.classList.remove('animate-details');
+            void details.offsetWidth; 
+            
+            const term = termsData[dateKey];
+            const month = parseInt(dateKey.split('-')[0]);
+            const day = parseInt(dateKey.split('-')[1]);
+
+            details.innerHTML = `
+                <div class="term-title">${term.name}</div>
+                <div class="term-date">${year}年 ${month}月 ${day}日</div>
+                <div class="term-desc">${term.desc}</div>
+            `;
+            
+            details.classList.add('animate-details');
+
+            if (selectedDayElement) {
+                selectedDayElement.classList.remove('selected');
+            }
+            if (dayElement) {
+                dayElement.classList.add('selected');
+                selectedDayElement = dayElement;
+            }
+        }
+
+        function renderCalendar() {
+            const year = currentDisplayDate.getFullYear();
+            const month = currentDisplayDate.getMonth();
+            
+            document.getElementById('month-year').innerText = `${year}年 ${month + 1}月`;
+            
+            const firstDayIndex = new Date(year, month, 1).getDay();
+            const lastDay = new Date(year, month + 1, 0).getDate();
+            
+            const grid = document.getElementById('days-grid');
+            grid.innerHTML = '';
+
+            for (let i = 0; i < firstDayIndex; i++) {
+                const emptyDiv = document.createElement('div');
+                emptyDiv.classList.add('day', 'empty');
+                grid.appendChild(emptyDiv);
+            }
+
+            for (let i = 1; i <= lastDay; i++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('day');
+                dayDiv.innerText = i;
+
+                const monthStr = String(month + 1).padStart(2, '0');
+                const dayStr = String(i).padStart(2, '0');
+                const dateKey = `${monthStr}-${dayStr}`;
+
+                if (termsData[dateKey]) {
+                    dayDiv.classList.add('solar-term');
+                    dayDiv.setAttribute('data-term', termsData[dateKey].name);
+                    
+                    dayDiv.addEventListener('click', () => {
+                        updateDetails(dateKey, year, dayDiv);
+                    });
+
+                    if (selectedDayElement && selectedDayElement.getAttribute('data-term') === termsData[dateKey].name) {
+                        dayDiv.classList.add('selected');
+                        selectedDayElement = dayDiv;
+                    }
+                }
+
+                grid.appendChild(dayDiv);
+            }
+        }
+
+        function changeMonth(step) {
+            currentDisplayDate.setMonth(currentDisplayDate.getMonth() + step);
+            renderCalendar();
+        }
+
+        // 3D 视差动效
+        document.addEventListener('mousemove', (e) => {
+            const app = document.getElementById('app');
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 70; 
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 70;
+            app.style.transform = `rotateY(${-xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            const app = document.getElementById('app');
+            app.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+
+        renderCalendar();
+        
+        const activeTerm = getCurrentActiveTerm();
+        const activeTermMonth = parseInt(activeTerm.key.split('-')[0]) - 1;
+        if (currentDisplayDate.getMonth() !== activeTermMonth || currentDisplayDate.getFullYear() !== activeTerm.year) {
+            currentDisplayDate = new Date(activeTerm.year, activeTermMonth, 1);
+            renderCalendar();
+        }
+        
+        const termElements = document.querySelectorAll('.solar-term');
+        termElements.forEach(el => {
+            if (el.getAttribute('data-term') === termsData[activeTerm.key].name) {
+                updateDetails(activeTerm.key, activeTerm.year, el);
+            }
+        });
+    </script>
+</body>
+</html>
